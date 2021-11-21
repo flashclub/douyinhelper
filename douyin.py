@@ -75,7 +75,7 @@ class DouYin:
             os.remove(self.current_download_name)
  
     def get_video_urls(self, sec_uid, max_cursor):
-        user_url_prefix = 'https://www.iesdouyin.com/web/api/v2/aweme/post/?sec_uid={0}&max_cursor={1}&count=2000'
+        user_url_prefix = 'https://www.iesdouyin.com/web/api/v2/aweme/like/?sec_uid={0}&max_cursor={1}&count=2000'
  
         i = 0
         result = []
