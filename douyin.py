@@ -75,7 +75,10 @@ class DouYin:
             os.remove(self.current_download_name)
  
     def get_video_urls(self, sec_uid, max_cursor):
-        user_url_prefix = 'https://www.iesdouyin.com/web/api/v2/aweme/post/?sec_uid={0}&max_cursor={1}&count=2000'
+        # 用户视频列表
+        # user_url_prefix = 'https://www.iesdouyin.com/web/api/v2/aweme/post/?sec_uid={0}&max_cursor={1}&count=2000'
+        # 用户喜欢列表
+        user_url_prefix = 'https://www.iesdouyin.com/web/api/v2/aweme/like/?sec_uid={0}&max_cursor={1}&count=2000'
  
         i = 0
         result = []
@@ -97,6 +100,7 @@ class DouYin:
         video_list = []
         for item in result:
             if nickname is None:
+                print('name-----', item )
                 nickname = item['author']['nickname'] if re.sub(r'[\/:*?"<>|]', '', item['author']['nickname']) else None
  
             video_list.append({
